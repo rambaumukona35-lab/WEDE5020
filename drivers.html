@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Racing Legends - Legendary Drivers</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .driver-row {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+        
+        .driver-card {
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            width: 120px;
+        }
+        
+        .driver-card:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-5px);
+        }
+        
+        .driver-card.active {
+            border-color: #e10600;
+            background: rgba(225,6,0,0.3);
+        }
+        
+        .driver-card img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+            border: 2px solid #e10600;
+        }
+        
+        .driver-card h3 {
+            color: white;
+            margin: 8px 0 5px;
+            font-size: 0.85rem;
+        }
+        
+        .driver-card p {
+            color: #ffaa00;
+            margin: 0;
+            font-size: 0.7rem;
+        }
+        
+        .driver-info {
+            background: rgba(255,255,255,0.08);
+            border-radius: 20px;
+            padding: 30px;
+            margin-top: 30px;
+            animation: fadeIn 0.4s ease;
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        
+        .driver-info-image {
+            flex: 0 0 200px;
+            text-align: center;
+        }
+        
+        .driver-info-image img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #e10600;
+        }
+        
+        .driver-info-text {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .driver-info-text h2 {
+            color: #e10600;
+            border-bottom: 2px solid #e10600;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .driver-info-text table {
+            width: 100%;
+            background: rgba(255,255,255,0.05);
+        }
+        
+        .driver-info-text td {
+            padding: 12px;
+        }
+        
+        .driver-info-text td:first-child {
+            font-weight: bold;
+            width: 180px;
+            color: #ffaa00;
+        }
+        
+        .welcome-message {
+            text-align: center;
+            padding: 40px;
+            background: rgba(225,6,0,0.1);
+            border-radius: 20px;
+            margin-top: 30px;
+        }
+        
+        @media (max-width: 700px) {
+            .driver-info {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .driver-info-text td:first-child {
+                width: 100px;
+            }
+        }
+        
+        @media (max-width: 1000px) {
+            .driver-row {
+                gap: 15px;
+            }
+            .driver-card {
+                width: 100px;
+                padding: 10px;
+            }
+            .driver-card img {
+                width: 60px;
+                height: 60px;
+            }
+            .driver-card h3 {
+                font-size: 0.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+ <nav>
+    <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 15px; max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+        
+        <!-- LOGO - PUT YOUR IMAGE HERE -->
+        <a href="index.html" class="logo">
+            <img src="_images/WhatsApp Image 2026-04-20 at 14.26.14.jpeg" >
+            <span>RACING <span>LEGENDS</span></span>
+        </a>
+        
+    <nav>
+        <ul>
+            <li><a href="index.html"> Home</a></li>
+            <li><a href="races.html"> Races</a></li>
+            <li><a href="enquiries.html"> Enquiries</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="products.html"> Products</a></li>
+            <li><a href="drivers.html"> Drivers</a></li>
+        </ul>
+    </nav>
+
+    <hr>
+
+    <main>
+        <h1> Legendary Racing Drivers</h1>
+        <p>Click on any driver below to view their full profile.</p>
+
+        <!-- Driver Row - Each box has a picture -->
+        <div class="driver-row">
+            <!-- Senna -->
+            <div class="driver-card" onclick="showDriver('senna')">
+                <img src="_images/WhatsApp Image 2026-05-29 at 22.22.54.jpeg">
+                <h3>Ayrton Senna</h3>
+                <p> 3x</p>
+            </div>
+            
+            <!-- Schumacher -->
+            <div class="driver-card" onclick="showDriver('schumacher')">
+                <img src="_images/WhatsApp Image 2026-05-29 at 22.29.12.jpeg">
+                <h3>Schumacher</h3>
+                <p>7x</p>
+            </div>
+            
+            <!-- Hamilton -->
+            <div class="driver-card" onclick="showDriver('hamilton')">
+                <img src="_images/WhatsApp Image 2026-05-29 at 19.30.07.jpeg">
+                <h3>Hamilton</h3>
+                <p> 7x</p>
+            </div>
+            
+            <!-- Fangio -->
+            <div class="driver-card" onclick="showDriver('fangio')">
+                <img src="_images/WhatsApp Image 2026-05-29 at 22.35.28.jpeg">
+                <h3>Fangio</h3>
+                <p> 5x</p>
+            </div>
+            
+            <!-- Prost -->
+            <div class="driver-card" onclick="showDriver('prost')">
+                <img src="_images/WhatsApp Image 2026-05-29 at 22.37.46.jpeg">
+                <h3>Prost</h3>
+                <p> 4x</p>
+            </div>
+            
+            <!-- Lauda -->
+            <div class="driver-card" onclick="showDriver('lauda')">
+                <img src="_images/WhatsApp Image 2026-05-29 at 22.44.06.jpeg">
+                <h3>Lauda</h3>
+                <p> 3x</p>
+            </div>
+            
+            <!-- Stewart -->
+            <div class="driver-card" onclick="showDriver('stewart')">
+                <img src="_images/WhatsApp Image 2026-05-29 at 22.48.38.jpeg">
+                <h3>Stewart</h3>
+                <p> 3x</p>
+            </div>
+            
+            <!-- Clark -->
+            <div class="driver-card" onclick="showDriver('clark')">
+                <img src="_images/WhatsApp Image 2026-05-29 at 22.53.35.jpeg">
+                <h3>Clark</h3>
+                <p> 2x</p>
+            </div>
+        </div>
+
+        <!-- Driver Info Display Area - Also has a picture on the side -->
+        <div id="driverInfo">
+            <div class="welcome-message">
+                <h3> Click on any driver above </h3>
+                <p>Their biography, stats, and legacy will appear here with their picture.</p>
+            </div>
+        </div>
+
+        <!-- Champions Comparison Table -->
+        <h2>Champions Comparison</h2>
+        <table border="1" cellpadding="10" width="100%">
+            <thead>
+                <tr bgcolor="#e10600">
+                    <th>Driver</th>
+                    <th>Titles</th>
+                    <th>Wins</th>
+                    <th>Poles</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Lewis Hamilton</td><td align="center">7</td><td align="center">103</td><td align="center">104</td></tr>
+                <tr><td>Michael Schumacher</td><td align="center">7</td><td align="center">91</td><td align="center">68</td></tr>
+                <tr><td>Juan Manuel Fangio</td><td align="center">5</td><td align="center">24</td><td align="center">29</td></tr>
+                <tr><td>Alain Prost</td><td align="center">4</td><td align="center">51</td><td align="center">33</td></tr>
+                <tr><td>Ayrton Senna</td><td align="center">3</td><td align="center">41</td><td align="center">65</td></tr>
+                <tr><td>Niki Lauda</td><td align="center">3</td><td align="center">25</td><td align="center">24</td></tr>
+                <tr><td>Jackie Stewart</td><td align="center">3</td><td align="center">27</td><td align="center">17</td></tr>
+                <tr><td>Jim Clark</td><td align="center">2</td><td align="center">25</td><td align="center">33</td></tr>
+            </tbody>
+        </table>
+    </main>
+
+    <hr>
+
+    <footer>
+        <p> Racing Legends | © 2026 | Follow the passion for speed </p>
+        <p> contact@racinglegeneds.com |  068 33 44 5588</p>
+    </footer>
+
+    <script>
+        function showDriver(driver) {
+            // Remove active class from all cards
+            let cards = document.querySelectorAll('.driver-card');
+            cards.forEach(card => card.classList.remove('active'));
+            
+            // Add active class to clicked card
+            event.currentTarget.classList.add('active');
+            
+            const drivers = {
+                senna: {
+                    name: "Ayrton Senna ",
+                    born: "March 21, 1960 - São Paulo, Brazil",
+                    died: "May 1, 1994 - Imola, Italy (age 34)",
+                    titles: "3 (1988, 1990, 1991)",
+                    wins: "41",
+                    poles: "65",
+                    teams: "Toleman, Lotus, McLaren, Williams",
+                    legacy: "Known for his incredible raw speed and qualifying brilliance. His 65 pole positions stood as a record for 17 years. The Master of Monaco."
+                },
+                schumacher: {
+                    name: "Michael Schumacher",
+                    born: "January 3, 1969 - Hürth, West Germany",
+                    died: "Still alive",
+                    titles: "7 (1994, 1995, 2000, 2001, 2002, 2003, 2004)",
+                    wins: "91",
+                    poles: "68",
+                    teams: "Jordan, Benetton, Ferrari, Mercedes",
+                    legacy: "Dominated the 2000s with Ferrari. Known for unmatched work ethic, fitness, and precision. Held almost every F1 record at his retirement."
+                },
+                hamilton: {
+                    name: "Lewis Hamilton 🇬🇧",
+                    born: "January 7, 1985 - Stevenage, England",
+                    died: "Still alive",
+                    titles: "7 (2008, 2014, 2015, 2017, 2018, 2019, 2020)",
+                    wins: "103 (All-time record)",
+                    poles: "104 (All-time record)",
+                    teams: "McLaren, Mercedes",
+                    legacy: "Most successful driver in F1 history. Knighted in 2021 for services to motorsport. Active voice for diversity and equality."
+                },
+                fangio: {
+                    name: "Juan Manuel Fangio ",
+                    born: "June 24, 1911 - Balcarce, Argentina",
+                    died: "July 17, 1995 - Buenos Aires, Argentina (age 84)",
+                    titles: "5 (1951, 1954, 1955, 1956, 1957)",
+                    wins: "24",
+                    poles: "29",
+                    teams: "Alfa Romeo, Maserati, Mercedes, Ferrari",
+                    legacy: "Dominated F1's first decade. Won titles with 4 different teams — an unmatched achievement. His winning percentage of 46% is still the highest."
+                },
+                prost: {
+                    name: "Alain Prost", 
+                    born: "February 24, 1955 - Saint-Chamond, France",
+                    died: "Still alive",
+                    titles: "4 (1985, 1986, 1989, 1993)",
+                    wins: "51",
+                    poles: "33",
+                    teams: "McLaren, Renault, Ferrari, Williams",
+                    legacy: "\"The Professor\" — known for intelligent, smooth, and calculating driving style. Epic rivalries with Senna and Lauda."
+                },
+                lauda: {
+                    name: "Niki Lauda ",
+                    born: "February 22, 1949 - Vienna, Austria",
+                    died: "May 20, 2019 - Zurich, Switzerland (age 70)",
+                    titles: "3 (1975, 1977, 1984)",
+                    wins: "25",
+                    poles: "24",
+                    teams: "March, BRM, Ferrari, Brabham, McLaren",
+                    legacy: "Survived a horrific crash at Nürburgring in 1976 that left him with severe burns. Returned to racing just 6 weeks later."
+                },
+                stewart: {
+                    name: "Jackie Stewart 🇬🇧",
+                    born: "June 11, 1939 - Dumbarton, Scotland",
+                    died: "Still alive",
+                    titles: "3 (1969, 1971, 1973)",
+                    wins: "27",
+                    poles: "17",
+                    teams: "BRM, Matra, March, Tyrrell",
+                    legacy: "Safety pioneer who transformed F1. Campaigned for track safety improvements and better helmet standards. Knighted in 2001."
+                },
+                clark: {
+                    name: "Jim Clark 🇬🇧",
+                    born: "March 4, 1936 - Kilmany, Scotland",
+                    died: "April 7, 1968 - Hockenheim, Germany (age 32)",
+                    titles: "2 (1963, 1965)",
+                    wins: "25",
+                    poles: "33",
+                    teams: "Lotus",
+                    legacy: "Considered by many as the most naturally gifted driver ever. Won 7 of 10 races in 1963. Also won the Indianapolis 500 in 1965."
+                }
+            };
+            
+            const d = drivers[driver];
+            
+            const html = `
+                <div class="driver-info">
+                    <div class="driver-info-image">
+                        <img src="${d.image}" alt="${d.name}">
+                    </div>
+                    <div class="driver-info-text">
+                        <h2>${d.name}</h2>
+                        <table border="1" cellpadding="12">
+                            <tr><td><strong>Born:</strong></td><td>${d.born}</td></tr>
+                            <tr><td><strong>Died:</strong></td><td>${d.died}</td></tr>
+                            <tr><td><strong>World Championships:</strong></td><td>${d.titles}</td></tr>
+                            <tr><td><strong>Race Wins:</strong></td><td>${d.wins}</td></tr>
+                            <tr><td><strong>Pole Positions:</strong></td><td>${d.poles}</td></tr>
+                            <tr><td><strong>Teams:</strong></td><td>${d.teams}</td></tr>
+                            <tr><td><strong>Legacy:</strong></td><td>${d.legacy}</td></tr>
+                        </table>
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById('driverInfo').innerHTML = html;
+        }
+    </script>
+
+</body>
+</html>

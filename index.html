@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Racing Legends - Home</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .newsletter-message {
+            margin-top: 15px;
+            padding: 12px;
+            border-radius: 10px;
+            display: none;
+            text-align: center;
+        }
+        .newsletter-success {
+            background: rgba(0,255,0,0.2);
+            border: 1px solid #00ff00;
+            color: #00ff00;
+        }
+        .newsletter-error {
+            background: rgba(255,0,0,0.2);
+            border: 1px solid #ff0000;
+            color: #ff0000;
+        }
+        .subscribe-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+        .subscribe-container input {
+            width: 280px;
+            padding: 12px;
+            border-radius: 50px;
+            border: 1px solid #333;
+            background: #222;
+            color: white;
+        }
+        .subscribe-container button {
+            padding: 12px 25px;
+            border-radius: 50px;
+            background: #e10600;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .subscribe-container button:hover {
+            background: #ff2e00;
+        }
+        
+        /* Make feature cards clickable */
+        .feature-card {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255,255,255,0.2);
+        }
+        
+        /* 3 cards grid */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+    </style>
+  <nav>
+    <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 15px; max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+        
+        <!-- LOGO - PUT YOUR IMAGE HERE -->
+        <a href="index.html" class="logo">
+            <img src="_images/WhatsApp Image 2026-04-20 at 14.26.14.jpeg" >
+            <span>RACING <span>LEGENDS</span></span>
+        </a>
+        
+        <!-- NAVIGATION MENU -->
+        <ul style="display: flex; flex-wrap: wrap; list-style: none; gap: 25px; margin: 0;">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="races.html">Races</a></li>
+            <li><a href="enquiries.html">Enquiries</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="drivers.html">Drivers</a></li>
+        </ul>
+    </div>
+</nav>
+
+    <div class="container">
+        <div class="hero">
+            <h1>RACING LEGENDS</h1>
+            <p>Celebrating the greatest drivers, most iconic races, and the unforgettable spirit of motorsport.</p>
+            <a href="drivers.html" class="btn">Explore Legends →</a>
+        </div>
+
+        <!-- CLICKABLE FEATURE CARDS - No emojis -->
+        <div class="feature-grid">
+            <div class="feature-card" onclick="window.location.href='drivers.html'">
+                <div class="icon">🏎️</div>
+                <h3>Legendary Drivers</h3>
+                <p>From Senna to Hamilton — profiles of the all-time greats.</p>
+                <p style="color: #e10600; margin-top: 10px;">Click to explore →</p>
+            </div>
+            
+            <div class="feature-card" onclick="window.location.href='products.html'">
+                <div class="icon">🛒</div>
+                <h3>Official Store</h3>
+                <p>Exclusive merchandise for true fans.</p>
+                <p style="color: #e10600; margin-top: 10px;">Click to explore →</p>
+            </div>
+            
+            <div class="feature-card" onclick="window.location.href='races.html'">
+                <div class="icon"></div>
+                <h3>Classic Races</h3>
+                <p>Relive the most thrilling moments.</p>
+                <p style="color: #e10600; margin-top: 10px;">Click to explore →</p>
+            </div>
+        </div>
+
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-number">100+</div>
+                <div class="stat-label">Race Wins</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">33</div>
+                <div class="stat-label">Champions</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">7</div>
+                <div class="stat-label">Decades</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">50K+</div>
+                <div class="stat-label">Fans</div>
+            </div>
+        </div>
+
+        <!-- Call to Action / Newsletter Subscribe -->
+        <div style="text-align: center; margin-top: 60px; padding: 40px; background: rgba(225,6,0,0.15); border-radius: 20px;">
+            <h2 style="margin-bottom: 15px;">Ready to Join the Racing Community?</h2>
+            <p style="margin-bottom: 20px;">Subscribe to our newsletter for exclusive updates and offers.</p>
+            
+            <div class="subscribe-container">
+                <input type="email" id="subscribeEmail" placeholder="Your email address">
+                <button onclick="subscribeNewsletter()">Subscribe</button>
+            </div>
+            
+            <div id="subscribeMessage" class="newsletter-message"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Racing Legends | © 2025 | Follow the passion for speed</p>
+        <p>Email: contact@racinglegeneds.com | Phone: +1 234 567 890</p>
+    </footer>
+
+    <script>
+        function subscribeNewsletter() {
+            let emailInput = document.getElementById('subscribeEmail');
+            let email = emailInput.value.trim();
+            let messageDiv = document.getElementById('subscribeMessage');
+            
+            // Check if email is empty
+            if (email === "") {
+                messageDiv.innerHTML = "Please enter your email address";
+                messageDiv.className = "newsletter-message newsletter-error";
+                messageDiv.style.display = "block";
+                return;
+            }
+            
+            // Check if email is valid format
+            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                messageDiv.innerHTML = "Please enter a valid email address (e.g., name@example.com)";
+                messageDiv.className = "newsletter-message newsletter-error";
+                messageDiv.style.display = "block";
+                return;
+            }
+            
+            // Success message
+            messageDiv.innerHTML = `Thank you! ${email} has been subscribed to our newsletter.`;
+            messageDiv.className = "newsletter-message newsletter-success";
+            messageDiv.style.display = "block";
+            
+            // Clear the input field
+            emailInput.value = "";
+            
+            // Hide message after 5 seconds
+            setTimeout(function() {
+                messageDiv.style.display = "none";
+            }, 5000);
+        }
+    </script>
+
+</body>
+</html>

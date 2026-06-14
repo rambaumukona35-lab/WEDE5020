@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Racing Legends - Enquiries</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .form-message {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            display: none;
+        }
+        .success-message {
+            background: rgba(0,255,0,0.2);
+            border: 1px solid #00ff00;
+            color: #00ff00;
+        }
+        .error-message {
+            background: rgba(255,0,0,0.2);
+            border: 1px solid #ff0000;
+            color: #ff0000;
+        }
+    </style>
+</head>
+<body>
+ <nav>
+    <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 15px; max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+        
+        <!-- LOGO - PUT YOUR IMAGE HERE -->
+        <a href="index.html" class="logo">
+            <img src="_images/WhatsApp Image 2026-04-20 at 14.26.14.jpeg" >
+            <span>RACING <span>LEGENDS</span></span>
+        </a>
+        
+    <nav>
+        <ul>
+            <li><a href="index.html"> Home</a></li>
+            
+            <li><a href="races.html"> Races</a></li>
+            <li><a href="enquiries.html"> Enquiries</a></li>
+            <li><a href="about.html"> About</a></li>
+            <li><a href="products.html"> Products</a></li>
+            <li><a href="drivers.html"> Drivers</a></li>
+        </ul>
+    </nav>
+
+    <hr>
+
+    <main>
+        <h1> Contact Us</h1>
+        <p>Have questions about Racing Legends? Send us a message. We'd love to hear from you!</p>
+
+        <br>
+
+        <!-- Contact Information Table -->
+        <h2> Get in Touch</h2>
+        <table border="1" cellpadding="12" width="100%">
+            <tr bgcolor="#e10600">
+                <th>Contact Method</th>
+                <th>Details</th>
+             </tr>
+             <tr>
+                 <td>
+                     Email</td>
+                 <td>contact@racinglegeneds.com</td>
+             </tr>
+             <tr>
+                 <td> Phone</td>
+                 <td>068 33 44 5588</td>
+             </tr>
+             <tr>
+                 <td> Address</td>
+                 <td>kyalami , South Africa</td>
+             </tr>
+             <tr>
+                 <td> Business Hours</td>
+                 <td>Monday - Friday: 9:00 AM - 6:00 PM (EST)</td>
+             </tr>
+         </table>
+
+        <br><br>
+
+        <!-- Enquiry Form -->
+        <h2>
+             Send Us a Message</h2>
+        <p>Fill out the form below and we'll get back to you within 24 hours.</p>
+
+        <form id="enquiryForm" onsubmit="return sendMessage(event)">
+            <table border="0" cellpadding="10" width="100%">
+                <tr>
+                    <td width="150"><strong>Full Name *</strong></td>
+                    <td><input type="text" id="fullname" name="fullname" size="50" required placeholder="Enter your full name"></td>
+                 </tr>
+                 <tr>
+                    <td><strong>Email Address *</strong></td>
+                    <td><input type="email" id="email" name="email" size="50" required placeholder="you@example.com"></td>
+                 </tr>
+                 <tr>
+                    <td><strong>Phone Number</strong></td>
+                    <td><input type="tel" id="phone" name="phone" size="50" placeholder="(123) 456-7890"></td>
+                 </tr>
+                 <tr>
+                    <td><strong>Subject *</strong></td>
+                    <td>
+                        <select id="subject" name="subject" required>
+                            <option value="">-- Select a subject --</option>
+                            <option value="general">General Enquiry</option>
+                            <option value="products">Product Information</option>
+                            <option value="events">Event Tickets</option>
+                            <option value="sponsorship">Sponsorship Opportunities</option>
+                            <option value="feedback">Feedback / Suggestion</option>
+                            <option value="complaint">Complaint</option>
+                        </select>
+                    </td>
+                 </tr>
+                 <tr>
+                    <td><strong>Preferred Contact Method</strong></td>
+                    <td>
+                        <input type="radio" name="contact_method" value="email"> Email
+                        <input type="radio" name="contact_method" value="phone"> Phone
+                        <input type="radio" name="contact_method" value="either"> Either
+                    </td>
+                 </tr>
+                 <tr>
+                    <td><strong>Message *</strong></td>
+                    <td><textarea id="message" name="message" rows="6" cols="50" required placeholder="Type your message here..."></textarea></td>
+                 </tr>
+                 <tr>
+                    <td><strong>Newsletter</strong></td>
+                    <td>
+                        <input type="checkbox" id="newsletter" name="newsletter" value="yes">
+                        Yes, I'd like to receive updates and exclusive offers via email.
+                    </td>
+                 </tr>
+                 <tr>
+                    <td></td>
+                    <td>
+                        <button type="submit"> Send Message</button>
+                        <button type="reset" onclick="resetForm()"> Clear Form</button>
+                    </td>
+                 </tr>
+             </table>
+        </form>
+
+        <!-- Message display area -->
+        <div id="formMessage" class="form-message"></div>
+
+        <br><br>
+
+        <!-- FAQ Section -->
+        <h2> Frequently Asked Questions</h2>
+        <table border="1" cellpadding="12" width="100%">
+            <tr bgcolor="#e10600">
+                <th width="30%">Question</th>
+                <th>Answer</th>
+             </tr>
+             <tr>
+                 <td>How long does shipping take?</td>
+                 <td>Standard shipping takes 5-7 business days. Express shipping takes 2-3 business days.</td>
+             </tr>
+             <tr>
+                 <td>Do you ship internationally?</td>
+                 <td>Yes! We ship worldwide. International shipping takes 10-14 business days.</td>
+             </tr>
+             <tr>
+                 <td>What is your return policy?</td>
+                 <td>We accept returns within 30 days of purchase. Items must be unused and in original packaging.</td>
+             </tr>
+             <tr>
+                 <td>How can I buy event tickets?</td>
+                 <td>Visit our Events page or contact us directly for ticket availability and pricing.</td>
+             </tr>
+             <tr>
+                 <td>Do you offer sponsorship for racing events?</td>
+                 <td>Yes, please select "Sponsorship Opportunities" from the subject dropdown above.</td>
+             </tr>
+         </table>
+
+        <br><br>
+
+        <!-- Social Media Links -->
+        <h2> Follow Us</h2>
+        <table border="1" cellpadding="10">
+             <tr>
+                 <td><a href="#"> Twitter</a></td>
+                 <td><a href="#"> Facebook</a></td>
+                 <td><a href="#"> Instagram</a></td>
+                 <td><a href="#"> YouTube</a></td>
+                 <td><a href="#"> LinkedIn</a></td>
+             </tr>
+         </table>
+    </main>
+
+    <hr>
+
+    <footer>
+        <p> Racing Legends | © 2026 | Follow the passion for speed </p>
+        <p> contact@racinglegeneds.com |  068 33 44 5588</p>
+    </footer>
+
+    <script>
+        function sendMessage(event) {
+            // Prevent form from actually submitting (no backend)
+            event.preventDefault();
+            
+            // Get form values
+            let fullname = document.getElementById('fullname').value;
+            let email = document.getElementById('email').value;
+            let subject = document.getElementById('subject').value;
+            let message = document.getElementById('message').value;
+            let newsletter = document.getElementById('newsletter').checked;
+            
+            // Validate required fields
+            if (!fullname || !email || !subject || !message) {
+                showMessage(' Please fill in all required fields (*)', 'error');
+                return false;
+            }
+            
+            // Validate email format
+            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                showMessage(' Please enter a valid email address', 'error');
+                return false;
+            }
+            
+            // Success message
+            let newsletterText = newsletter ? ' You have been subscribed to our newsletter!' : '❌ You did not subscribe to the newsletter.';
+            
+            let successMsg = ` Thank you ${fullname}! Your message has been sent successfully.\n\n`;
+            successMsg += ` We will respond to: ${email}\n`;
+            successMsg += ` Subject: ${subject}\n`;
+            successMsg += `${newsletterText}\n\n`;
+            successMsg += ` A Racing Legends representative will contact you within 24 hours. 🏁`;
+            
+            showMessage(successMsg, 'success');
+            
+            // Optionally clear the form after submission
+            // document.getElementById('enquiryForm').reset();
+            
+            return false;
+        }
+        
+        function showMessage(msg, type) {
+            let messageDiv = document.getElementById('formMessage');
+            messageDiv.innerHTML = msg.replace(/\n/g, '<br>');
+            messageDiv.className = 'form-message ' + (type === 'success' ? 'success-message' : 'error-message');
+            messageDiv.style.display = 'block';
+            
+            // Scroll to message
+            messageDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            
+            // Hide message after 8 seconds
+            setTimeout(function() {
+                messageDiv.style.display = 'none';
+            }, 8000);
+        }
+        
+        function resetForm() {
+            document.getElementById('enquiryForm').reset();
+            let messageDiv = document.getElementById('formMessage');
+            messageDiv.style.display = 'none';
+        }
+    </script>
+
+</body>
+</html>

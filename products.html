@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Racing Legends - Products</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ <nav>
+    <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 15px; max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+        
+        <!-- LOGO - PUT YOUR IMAGE HERE -->
+        <a href="index.html" class="logo">
+            <img src="_images/WhatsApp Image 2026-04-20 at 14.26.14.jpeg" >
+            <span>RACING <span>LEGENDS</span></span>
+        </a>
+        
+
+    <hr>
+
+    <main>
+        <h1> Official Racing Legends Store</h1>
+        <p>Grab your official merchandise. T-shirts, caps, posters, and more — designed for true racing fans.</p>
+
+        <br>
+
+        <!-- Apparel Section -->
+        <h2> Apparel</h2>
+        <table border="1" cellpadding="15" width="100%">
+            <tr bgcolor="#e10600">
+                <th>Product</th>
+                <th>Description</th>
+                <th>Size Options</th>
+                <th>Price</th>
+                <th>Order</th>
+             </tr>
+             <tr align="center">
+                 <td><strong>🏎️ Senna T-Shirt</strong><br></td>
+                 <td align="left">Classic yellow helmet design. 100% cotton. Available in Black, White, Red.</td>
+                 <td>S, M, L, XL, XXL</td>
+                 <td>$29.99</td>
+                 <td><button onclick="addToCart('Senna T-Shirt', 29.99)"> Add to Cart</button></td>
+             </tr>
+             <tr align="center">
+                 <td><strong>🏎️ Schumacher Ferrari Cap</strong><br></td>
+                 <td align="left">Official Ferrari red cap with Schumacher signature. Adjustable strap.</td>
+                 <td>One Size</td>
+                 <td>$24.99</td>
+                 <td><button onclick="addToCart('Schumacher Ferrari Cap', 24.99)"> Add to Cart</button></td>
+             </tr>
+             <tr align="center">
+                 <td><strong>🏎️ Hamilton Hoodie</strong><br><img"></td>
+                 <td align="left">Purple hoodie with 7-star design. Fleece lined. Limited edition.</td>
+                 <td>S, M, L, XL</td>
+                 <td>$59.99</td>
+                 <td><button onclick="addToCart('Hamilton Hoodie', 59.99)"> Add to Cart</button></td>
+             </tr>
+             <tr align="center">
+                 <td><strong>🏎️ Vintage Fangio Jacket</strong><br></td>
+                 <td align="left">1950s style racing jacket. Leather finish. Retro patch.</td>
+                 <td>M, L, XL</td>
+                 <td>$89.99</td>
+                 <td><button onclick="addToCart('Vintage Fangio Jacket', 89.99)"> Add to Cart</button></td>
+             </tr>
+        </table>
+
+        <br><br>
+
+        <!-- Accessories Section -->
+        <h2>🧢 Accessories</h2>
+        <table border="1" cellpadding="15" width="100%">
+            <tr bgcolor="#e10600">
+                <th>Product</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Order</th>
+             </tr>
+             <tr align="center">
+                 <td><strong>Racing Legends Mug</strong><br></td>
+                 <td align="left">Ceramic mug. "First is everything" printed. Dishwasher safe.</td>
+                 <td>$12.99</td>
+                 <td><button onclick="addToCart('Racing Legends Mug', 12.99)">
+                     Add to Cart</button></td>
+             </tr>
+             <tr align="center">
+                 <td><strong>Senna Poster</strong><br></td>
+                 <td align="left">24x36 inches. High quality gloss finish. Iconic Monaco image.</td>
+                 <td>$14.99</td>
+                 <td><button onclick="addToCart('Senna Poster', 14.99)"> Add to Cart</button></td>
+             </tr>
+             <tr align="center">
+                 <td><strong>Keychain Set (3 pack)</strong><br></td>
+                 <td align="left">Metal keychains: Senna, Schumacher, Hamilton. Gift box included.</td>
+                 <td>$9.99</td>
+                 <td><button onclick="addToCart('Keychain Set', 9.99)"> Add to Cart</button></td>
+             </tr>
+             <tr align="center">
+                 <td><strong>Racing Gloves</strong><br></td>
+                 <td align="left">Sim racing gloves. Breathable mesh. Anti-slip palm.</td>
+                 <td>$34.99</td>
+                 <td><button onclick="addToCart('Racing Gloves', 34.99)"> Add to Cart</button></td>
+             </tr>
+        </table>
+
+        <br><br>
+
+        <!-- Collectibles Section -->
+        <h2> Collectibles & Diecast Models</h2>
+        <table border="1" cellpadding="15" width="100%">
+            <tr bgcolor="#e10600">
+                <th>Product</th>
+                <th>Description</th>
+                <th>Scale</th>
+                <th>Price</th>
+                <th>Order</th>
+             </tr>
+             <tr align="center">
+                 <td><strong>Senna McLaren MP4/4</strong><br></td>
+                 <td align="left">1988 championship winning car. Detailed model with display case.</td>
+                 <td>1:18</td>
+                 <td>$79.99</td>
+                 <td><button onclick="addToCart('Senna McLaren MP4/4', 79.99)"> Add to Cart</button></td>
+             </tr>
+             <tr align="center">
+                 <td><strong>Schumacher Ferrari F2004</strong><br></td>
+                 <td align="left">2004 dominant Ferrari. Opening engine cover. Signed edition.</td>
+                 <td>1:18</td>
+                 <td>$89.99</td>
+                 <td><button onclick="addToCart('Schumacher Ferrari F2004', 89.99)">
+                 Add to Cart</button></td>
+             </tr>
+             <tr align="center">
+                 <td><strong>Hamilton Mercedes W11</strong><br></td>
+                 <td align="left">2020 championship car. Detailed livery. Limited to 5000 pieces.</td>
+                 <td>1:43</td>
+                 <td>$49.99</td>
+                 <td><button onclick="addToCart('Hamilton Mercedes W11', 49.99)"> Add to Cart</button></td>
+             </tr>
+             <tr align="center">
+                 <td><strong>Helmet Collection (Set of 3)</strong><br></td>
+                 <td align="left">Mini replica helmets: Senna (yellow), Schumacher (red), Hamilton (purple).</td>
+                 <td>1:12</td>
+                 <td>$59.99</td>
+                 <td><button onclick="addToCart('Helmet Collection', 59.99)">🛒 Add to Cart</button></td>
+             </tr>
+        </table>
+
+        <br><br>
+
+        <!-- Bundle Deals -->
+        <h2> Bundle Deals (Save 15%)</h2>
+        <table border="1" cellpadding="15" width="100%">
+            <tr bgcolor="#e10600">
+                <th>Bundle</th>
+                <th>Includes</th>
+                <th>Original Price</th>
+                <th>Bundle Price</th>
+                <th>Order</th>
+             </tr>
+             <tr align="center">
+                 <td><strong>Senna Fan Bundle</strong></td>
+                 <td align="left">Senna T-Shirt + Poster + Keychain</td>
+                 <td>$57.97</td>
+                 <td><strong>$49.99</strong></td>
+                 <td><button onclick="addToCart('Senna Fan Bundle', 49.99)"> Add Bundle</button></td>
+             </tr>
+             <tr align="center">
+                 <td><strong>Ultimate Collector Bundle</strong></td>
+                 <td align="left">Senna Car + Schumacher Car + Helmet Set</td>
+                 <td>$229.97</td>
+                 <td><strong>$195.99</strong></td>
+                 <td><button onclick="addToCart('Ultimate Collector Bundle', 195.99)"> Add Bundle</button></td>
+             </tr>
+             <tr align="center">
+                 <td><strong>Gift Pack</strong></td>
+                 <td align="left">Mug + Keychain Set + Cap</td>
+                 <td>$47.97</td>
+                 <td><strong>$40.99</strong></td>
+                 <td><button onclick="addToCart('Gift Pack', 40.99)"> Add Bundle</button></td>
+             </tr>
+        </table>
+
+        <br><br>
+
+        <!-- Shipping Info -->
+        <h2> Shipping Information</h2>
+        <table border="1" cellpadding="10" width="100%">
+            <tr>
+                <td width="33%" align="center">
+                     Standard: $5.99 (5-7 business days)</td>
+                <td width="33%" align="center"> Express: $12.99 (2-3 business days)</td>
+                <td width="34%" align="center"> International: $19.99 (10-14 business days)</td>
+            </tr>
+        </table>
+
+        <br>
+
+        <!-- Payment Methods -->
+        <h2> We Accept</h2>
+        <table border="1" cellpadding="10">
+            <tr>
+                <td> Visa</td>
+                <td> MasterCard</td>
+                <td> American Express</td>
+                <td> Discover</td>
+                <td> PayPal</td>
+                <td> Apple Pay</td>
+                <td> Google Pay</td>
+            </tr>
+        </table>
+    </main>
+
+    <hr>
+
+    <!-- CART SUMMARY AT THE BOTTOM (before footer) -->
+    <div id="cart-summary" style="background: rgba(225,6,0,0.2); padding: 20px; border-radius: 10px; margin: 20px; text-align: center;">
+        <h3> YOUR SHOPPING CART</h3>
+        <p style="font-size: 1.2rem;">Items: <span id="cart-count" style="color: #ffaa00; font-size: 1.5rem; font-weight: bold;">0</span> | Total: $<span id="cart-total" style="color: #ffaa00; font-size: 1.5rem; font-weight: bold;">0.00</span></p>
+        <button onclick="clearCart()" style="background: #333; padding: 8px 20px; margin-top: 10px;">🗑️ Clear Cart</button>
+        <button onclick="checkout()" style="background: #e10600; padding: 8px 30px; margin-top: 10px;">✅ Proceed to Checkout</button>
+    </div>
+
+    <footer>
+        <p>Racing Legends | © 2026 | Follow the passion for speed </p>
+        <p> contact@racinglegeneds.com |  068 33 44 5588</p>
+    </footer>
+
+    <!-- JavaScript for Cart Functionality -->
+    <script>
+        // Cart array to store items
+        let cart = [];
+
+        // Function to add item to cart
+        function addToCart(productName, price) {
+            // Add item to cart array
+            cart.push({
+                name: productName,
+                price: price
+            });
+            
+            // Show alert message
+            alert(`
+             ${productName} has been added to your cart!`);
+            
+            // Update the cart display
+            updateCartDisplay();
+        }
+
+        // Function to update cart count and total
+        function updateCartDisplay() {
+            const cartCount = cart.length;
+            let total = 0;
+            
+            for (let i = 0; i < cart.length; i++) {
+                total += cart[i].price;
+            }
+            
+            document.getElementById('cart-count').innerHTML = cartCount;
+            document.getElementById('cart-total').innerHTML = total.toFixed(2);
+        }
+
+        // Function to clear the entire cart
+        function clearCart() {
+            if (cart.length > 0) {
+                if (confirm('Are you sure you want to clear your entire cart?')) {
+                    cart = [];
+                    updateCartDisplay();
+                    alert('🛒 Your cart has been cleared.');
+                }
+            } else {
+                alert('Your cart is already empty.');
+            }
+        }
+
+        // Checkout function
+        function checkout() {
+            if (cart.length === 0) {
+                alert('Your cart is empty! Add some items before checking out.');
+            } else {
+                let total = 0;
+                for (let i = 0; i < cart.length; i++) {
+                    total += cart[i].price;
+                }
+                alert(`Thank you for your order!\n\nTotal: $${total.toFixed(2)}\n\nYour items will be shipped soon.`);
+                // Optionally clear cart after checkout
+                // cart = [];
+                // updateCartDisplay();
+            }
+        }
+    </script>
+
+</body>
+</html>
